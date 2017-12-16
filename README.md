@@ -53,8 +53,7 @@ class Example extends Component {
   you are free to use any `div` that you please.
 * **changeMenuOn**: specify the page width as a string in `px` that you would
   like to switch between the small and large menu.
-* **menu**: takes in any `div` to create your menu content. A `<Menu>` styled
-  `div` is supplied, however, you are free to create your own.
+* **menu**: takes in any `div` to create your menu content.
 * You can also specify individual stylings for each of the large or small menus
   by adding a `className` to **largeMenuClassName** or **smallMenuClassName**
 

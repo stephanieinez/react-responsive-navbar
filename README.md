@@ -30,14 +30,12 @@ class Example extends Component {
         largeMenuClassName="large-menu-classname"
         smallMenuClassName="small-menu-classname"
         menu={
-          <Menu>
-            <ul>
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
-              <li>Item 4</li>
-            </ul>
-          </Menu>
+         <ul>
+           <li>Item 1</li>
+           <li>Item 2</li>
+           <li>Item 3</li>
+           <li>Item 4</li>
+         </ul>
         }
       />
     );

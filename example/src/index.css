@@ -1,0 +1,17 @@
+body {
+  margin: 20px 0;
+  background-color: pink;
+  font-family: monospace;
+}
+
+@media (min-width: 900px) {
+  .large-menu a {
+    color: DarkOrange;
+    font-size: 30px;
+  }
+}
+
+.small-menu a {
+  color: Skyblue;
+  text-decoration: line-through;
+}

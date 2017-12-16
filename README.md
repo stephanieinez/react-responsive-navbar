@@ -30,12 +30,12 @@ class Example extends Component {
         largeMenuClassName="large-menu-classname"
         smallMenuClassName="small-menu-classname"
         menu={
-         <ul>
-           <li>Item 1</li>
-           <li>Item 2</li>
-           <li>Item 3</li>
-           <li>Item 4</li>
-         </ul>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+          </ul>
         }
       />
     );
@@ -54,6 +54,15 @@ class Example extends Component {
 * **menu**: takes in any `div` to create your menu content.
 * You can also specify individual stylings for each of the large or small menus
   by adding a `className` to **largeMenuClassName** or **smallMenuClassName**
+
+| name               | type            | required |
+| ------------------ | --------------- | -------- |
+| menuOpenButton     | react component | no       |
+| menuCloseButton    | react component | no       |
+| changeMenuOn       | string          | yes      |
+| menu               | react component | yes      |
+| largeMenuClassName | string          | no       |
+| smallMenuClassName | string          | no       |
 
 ## License
 

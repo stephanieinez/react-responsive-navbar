@@ -57,8 +57,8 @@ class Example extends Component {
 
 | name               | type            | required |
 | ------------------ | --------------- | -------- |
-| menuOpenButton     | react component | no       |
-| menuCloseButton    | react component | no       |
+| menuOpenButton     | react component | yes       |
+| menuCloseButton    | react component | yes       |
 | changeMenuOn       | string          | yes      |
 | menu               | react component | yes      |
 | largeMenuClassName | string          | no       |

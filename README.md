@@ -1,4 +1,4 @@
-# react-responsive-navbar
+# alex's react-responsive-navbar
 
 Nothing crazy, nothing flashy, just a simple, flexible & completely customisable
 responsive navigation bar component. Check out

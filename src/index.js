@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const SmallMenu = styled.div`
   display: none;
@@ -9,7 +9,6 @@ const SmallMenu = styled.div`
     display: block;
   }
 `;
-
 const LargeMenu = styled.div`
   display: block;
   text-align: center;
@@ -24,45 +23,35 @@ const MenuIcon = ({ onClick, icon }) => (
   </div>
 );
 
-class ResponsiveMenu extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showMenu: false
-    };
-  }
+const Menu = ({
+  menu,
+  largeMenuClassName,
+  smallMenuClassName,
+  changeMenuOn,
+  menuOpenButton,
+  menuCloseButton
+}) => {
+  const [showMenu, setShowMenu] = useState(false);
+  const handleClick = () => setShowMenu(!showMenu);
 
-  handleClick = () => {
-    this.setState({ showMenu: !this.state.showMenu });
-  };
+  return (
+    <div>
+      <LargeMenu className={largeMenuClassName} size={changeMenuOn}>
+        {menu}
+      </LargeMenu>
+      <SmallMenu className={smallMenuClassName} size={changeMenuOn}>
+        {!showMenu ? (
+          <MenuIcon onClick={handleClick} icon={menuOpenButton} />
+        ) : (
+          <MenuIcon onClick={handleClick} icon={menuCloseButton} />
+        )}
+        {showMenu ? <div>{menu}</div> : null}
+      </SmallMenu>
+    </div>
+  );
+};
 
-  render() {
-    const {
-      menu,
-      largeMenuClassName,
-      smallMenuClassName,
-      changeMenuOn,
-      menuOpenButton,
-      menuCloseButton
-    } = this.props;
-    return (
-      <div>
-        <LargeMenu className={largeMenuClassName} size={changeMenuOn}>
-          {menu}
-        </LargeMenu>
-        <SmallMenu className={smallMenuClassName} size={changeMenuOn}>
-          {!this.state.showMenu ? (
-            <MenuIcon onClick={this.handleClick} icon={menuOpenButton} />
-          ) : (
-            <MenuIcon onClick={this.handleClick} icon={menuCloseButton} />
-          )}
-          {this.state.showMenu ? <div>{menu}</div> : null}
-        </SmallMenu>
-      </div>
-    );
-  }
-}
-ResponsiveMenu.propTypes = {
+Menu.propTypes = {
   menu: PropTypes.node.isRequired,
   largeMenuClassName: PropTypes.string,
   smallMenuClassName: PropTypes.string,
@@ -71,8 +60,9 @@ ResponsiveMenu.propTypes = {
   menuCloseButton: PropTypes.node.isRequired
 };
 
-ResponsiveMenu.defaultProps = {
-  largeMenuClassName: '',
-  smallMenuClassName: ''
+Menu.defaultProps = {
+  largeMenuClassName: "",
+  smallMenuClassName: ""
 };
-export default ResponsiveMenu;
+
+export default Menu;

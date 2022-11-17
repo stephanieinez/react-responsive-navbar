@@ -9,7 +9,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-icons": "^2.2.7",
-    "react-scripts": "1.0.13",
+    "react-scripts": "5.0.1",
     "react-responsive-navbar": "1.0.9"
   },
   "scripts": {
